@@ -1,0 +1,23 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t("elearning"), root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav ">
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            role="button" aria-haspopup="true" aria-expanded="false">
+            <%= t("english")%> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><%= t("english1")%></a></li>
+            <li><a href="#"><%= t("english2")%></a></li>
+          </ul>
+        </li>
+        <li><%= link_to t("japanese"), "#" %></li>
+        <li><%= link_to t("chinese"), "#" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("login"), "#" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
