@@ -1,0 +1,25 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> <%= t "stt" %> </th>
+      <th> <%= t "name" %> </th>
+      <th> <%= t "function" %> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.each_with_index  do |category, index| %>
+    <tr>
+      <td> <%= index + 1 %>
+      <td> <%= category.name %> </td>
+      <td>
+        <%= link_to t("create_course"), category_path(category),
+          class: "btn btn-info" %>
+        <%= link_to t("edit_category"), edit_category_path(category),
+          class: "btn btn-primary" %>
+        <%= link_to t("delete_category"), category, method: :delete,
+          data: { confirm: t("message_delete") }, class: "btn btn-danger" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
