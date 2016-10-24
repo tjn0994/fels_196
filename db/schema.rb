@@ -70,9 +70,9 @@ ActiveRecord::Schema.define(version: 20161017084347) do
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
+    t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "course_id"
     t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(version: 20161017084347) do
 
   create_table "user_lessons", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "lesson_id"
     t.index ["lesson_id"], name: "index_user_lessons_on_lesson_id"
     t.index ["user_id"], name: "index_user_lessons_on_user_id"
   end

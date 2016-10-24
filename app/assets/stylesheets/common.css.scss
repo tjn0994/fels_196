@@ -99,25 +99,50 @@ a.w3-btn-floating:hover {
   text-decoration: none;
   background: #242424;
 }
-.text-image{
+.text-image {
   position: absolute;
   top: 20%;
-  left: 10%
+  left: 10%;
 }
-
-.frame-image{
+.frame-image {
   position: relative;
   width: 100%;
 }
-#icon-left{
+#icon-left {
   position: absolute;
   top: 45%;
   left: 0;
   z-index: 10;
 }
-#icon-right{
+#icon-right {
   position: absolute;
   top: 45%;
   right: 0;
   z-index: 10;
+}
+
+/* forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input {
+  height: auto !important;
+}
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
