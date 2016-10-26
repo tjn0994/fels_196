@@ -12,11 +12,11 @@
       <td> <%= index + 1 %>
       <td> <%= category.name %> </td>
       <td>
-        <%= link_to t("create_course"), category_path(category),
+        <%= link_to t("create_course"), admin_category_path(category),
           class: "btn btn-info" %>
-        <%= link_to t("edit_category"), edit_category_path(category),
+        <%= link_to t("edit_category"), edit_admin_category_path(category),
           class: "btn btn-primary" %>
-        <%= link_to t("delete_category"), category, method: :delete,
+        <%= link_to t("delete_category"), admin_category_path(category), method: :delete,
           data: { confirm: t("message_delete") }, class: "btn btn-danger" %>
       </td>
     </tr>

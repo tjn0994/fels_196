@@ -1,4 +1,4 @@
-class CoursesController < ApplicationController
+class Admin::CoursesController < ApplicationController
   before_action :load_course, only: [:edit, :update, :destroy]
 
   def index
@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
     @course = Course.new course_params
     if @course.save
       flash[:success] = t "create_success"
-      redirect_to courses_path
+      redirect_to admin_courses_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
   def update
     if @course.update_attributes course_params
       flash[:success] = t "update_success"
-      redirect_to courses_path
+      redirect_to admin_courses_path
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
     else
       flash[:warning] = t "delete_fail"
     end
-    redirect_to courses_path
+    redirect_to admin_courses_path
   end
 
   private
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
       @course = Course.find_by_id params[:id]
       if @course.nil?
         flash[:warning] = t "id_not_exist"
-        redirect_to courses_path
+        redirect_to admin_courses_path
       end
     end
 end

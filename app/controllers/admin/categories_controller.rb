@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_action :load_category, only: [:edit, :update, :destroy]
 
   def index
@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new category_params
     if @category.save
       flash[:success] = t "create_success"
-      redirect_to categories_path
+      redirect_to admin_categories_path
     else
       render :new
     end
@@ -25,13 +25,10 @@ class CategoriesController < ApplicationController
   def update
     if @category.update_attributes category_params
       flash[:success] = t "update_success"
-      redirect_to categories_path
+      redirect_to admin_categories_path
     else
       render :edit
     end
-  end
-
-  def show
   end
 
   def destroy
@@ -40,7 +37,7 @@ class CategoriesController < ApplicationController
     else
       flash[:warning] = t "delete_fail"
     end
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   private
@@ -52,7 +49,7 @@ class CategoriesController < ApplicationController
       @category = Category.find_by_id params[:id]
       if @category.nil?
         flash[:warning] = t "id_not_exist"
-        redirect_to categories_path
+        redirect_to admin_categories_path
       end
     end
 end
