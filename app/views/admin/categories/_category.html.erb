@@ -7,16 +7,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @category.each_with_index do |category, index| %>
+    <% @categories.each_with_index do |category, index| %>
     <tr>
-      <td> <%= index + 1 %>
+      <td>
+        <%= current_index @categories.current_page,
+          Settings.per_page.category, index %>
+      </td>
       <td> <%= category.name %> </td>
       <td>
-        <%= link_to t("create_course"), category_path(category),
+        <%= link_to t("create_course"), admin_category_path(category),
           class: "btn btn-info" %>
-        <%= link_to t("edit_category"), edit_category_path(category),
+        <%= link_to t("edit_category"), edit_admin_category_path(category),
           class: "btn btn-primary" %>
-        <%= link_to t("delete_category"), category, method: :delete,
+        <%= link_to t("delete_category"), admin_category_path(category), method: :delete,
           data: { confirm: t("message_delete") }, class: "btn btn-danger" %>
       </td>
     </tr>
