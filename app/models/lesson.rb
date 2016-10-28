@@ -3,4 +3,5 @@ class Lesson < ApplicationRecord
   has_many :exam, dependent: :destroy
   has_many :user_lessons, dependent: :destroy
   has_many :words, dependent: :destroy
+  belongs_to :course
 end
