@@ -21,8 +21,9 @@
           class: "btn btn-success" %>
         <%= link_to t("edit_course"), edit_admin_lesson_path(lesson),
           class: "btn btn-primary" %>
-        <%= link_to t("delete_course"), admin_lesson_path(lesson), method: :delete,
-          data: { confirm: t("message_delete") }, class: "btn btn-danger" %>
+        <%= link_to t("delete_course"), admin_lesson_path(lesson),
+        method: :delete, data: { confirm: t("message_delete") },
+        class: "btn btn-danger" %>
       </td>
     </tr>
     <% end %>
