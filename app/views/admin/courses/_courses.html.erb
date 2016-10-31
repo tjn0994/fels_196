@@ -3,7 +3,7 @@
     <tr>
       <th> <%= t "stt" %> </th>
       <th> <%= t "name" %> </th>
-      <th> <%= t "name_category" %> </th>
+      <th> <%= t "name_course" %> </th>
       <th> <%= t "function" %> </th>
     </tr>
   </thead>
@@ -17,10 +17,11 @@
       <td> <%= course.name %> </td>
       <td> <%= course.category.name %> </td>
       <td>
-        <%= link_to t("edit_course"), edit_course_path(course),
+        <%= link_to t("edit_course"), edit_admin_course_path(course),
           class: "btn btn-primary" %>
-        <%= link_to t("delete_course"), course, method: :delete,
-          data: { confirm: t("message_delete") }, class: "btn btn-danger" %>
+        <%= link_to t("delete_course"), admin_course_path(course),
+          method: :delete, data: { confirm: t("message_delete") },
+          class: "btn btn-danger" %>
       </td>
     </tr>
     <% end %>
