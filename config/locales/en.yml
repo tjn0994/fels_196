@@ -61,3 +61,7 @@ en:
   create_course: "Create course"
   new_course: "New Course"
   list_course: "List course"
+  sign_up_now: "Sign up now!"
+  sign_up: "Sign up"
+  create_my_account: "Create my account"
+  loggin_success: "Loggined success"
