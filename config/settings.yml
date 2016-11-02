@@ -2,7 +2,10 @@ per_page:
   category: 10
   course: 10
   lesson: 10
+  word: 10
 image_size: 5
 image_format_accept: "image/jpeg,image/gif,image/png"
 image_width: 200
 image_height: 200
+max_length_word: 50
+max_length_name_lesson: 50

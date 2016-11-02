@@ -9,7 +9,9 @@ class Lesson < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :name, presence: true, length: {maximum: 50}
+  validates :name, presence: true,
+    length: {maximum: Settings.max_length_name_lesson}
+  validates :image, presence: true
   validate :verify_image_size
 
   private
