@@ -23,7 +23,8 @@
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-4">
-        <%= link_to t("create_question"), "#",class: "btn btn-danger btn-lg" %>
+        <%= link_to t("create_question"), admin_lesson_questions_path(@lesson),
+          class: "btn btn-danger btn-lg" %>
       </div>
     </div>
   </div>

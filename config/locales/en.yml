@@ -100,3 +100,7 @@ en:
   new_question_title: "New question"
   name_not_exist: "Name not exist"
   lesson_id_not_exist: "Lesson id not exist"
+  add_answer: "Add answer"
+  delete: "delete"
+  true: "True"
+  answers: "Answers :"

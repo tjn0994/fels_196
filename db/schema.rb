@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20161031100004) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.string   "name"
     t.boolean  "is_correct"
     t.integer  "question_id"
+    t.integer  "word_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["word_id"], name: "index_answers_on_word_id"
   end
 
   create_table "categories", force: :cascade do |t|

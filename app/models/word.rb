@@ -1,5 +1,6 @@
 class Word < ApplicationRecord
   belongs_to :lesson
+  has_many :answers, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.max_length_word}
   validates :meaning, presence: true,

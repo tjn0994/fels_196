@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :courses, except: :show
     resources :lessons do
-      resources :words, except: :show
+      resources :words, except: [:new, :show]
+      resources :questions, except: [:new, :show]
     end
   end
 
