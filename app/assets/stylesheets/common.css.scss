@@ -32,6 +32,11 @@ textarea {
   color: #fff;
   text-decoration: none;
 }
+.hello {
+  color: white;
+  padding-top: 15px;
+}
+
 /* footer */
 footer {
   margin-top: 45px;
@@ -56,6 +61,7 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
 /* slides */
 .frame-image{
   width: 100%;
@@ -146,6 +152,18 @@ input {
     color: $state-danger-text;
   }
 }
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
@@ -181,4 +199,156 @@ span.image {
   width: 100%;
   height: auto;
   margin-bottom:10px;
+}
+span.user_show {
+  color: green;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-top: 20px;
+}
+
+/* sidebar */
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+.gravatar_edit {
+  margin-top: 15px;
+}
+span.avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* image lesson */
+.image-represent{
+  width: 100%;
+  height: auto;
+  margin-bottom:10px;
+}
+.frame-lesson{
+  width: 33%;
+  height: 32%;
+  float: left;
+  padding-right: 5px;
+}
+.course_lesson{
+  background: #004d40;
+  color: #FFFF;
+  font-size: 20px;
+  height: 40px;
+  font-family: Arial;
+  line-height: 40px;
+  border-radius: 10px;
+}
+.background_word{
+  background: #e1bee7;
+  min-height: 500px;
+}
+.caption_first{
+  background: #4B7D1C;
+  color: #FFFF
+}
+.background_white{
+  background: #FFFF;
+}
+.padding_top_10px{
+  padding-top: 10px;
+}
+.background_image{
+  background: #bbdefb;
+}
+.background_lesson{
+  background: #d1c4e9;
+}
+
+.aside{
+    border: 1px solid;
+    color: blue;
+    position: fixed;
+    right: 50px;
+    width: 60px;
+    height: 40px;
+    line-height:40px;
+    padding-left: 10px;
+}
+
+#SubmitTag{
+   color:red;
+   width:230px;
 }

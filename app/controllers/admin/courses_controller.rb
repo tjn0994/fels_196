@@ -1,4 +1,6 @@
 class Admin::CoursesController < ApplicationController
+  before_action :logged_in_user
+  before_action :verify_admin
   before_action :load_course, only: [:edit, :update, :destroy]
 
   def index

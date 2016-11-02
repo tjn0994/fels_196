@@ -1,4 +1,6 @@
 class Admin::WordsController < ApplicationController
+  before_action :logged_in_user
+  before_action :verify_admin
   before_action :load_word, except: [:index, :create]
   before_action :load_lesson, except: :show
 

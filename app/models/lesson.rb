@@ -6,6 +6,7 @@ class Lesson < ApplicationRecord
   belongs_to :course
 
   scope :order_date_desc, ->{order created_at: :desc}
+  scope :filter_course, ->course_id {where course_id: course_id}
 
   mount_uploader :image, ImageUploader
 

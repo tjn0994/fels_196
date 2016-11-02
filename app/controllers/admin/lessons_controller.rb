@@ -1,4 +1,6 @@
 class Admin::LessonsController < ApplicationController
+  before_action :logged_in_user
+  before_action :verify_admin
   before_action :load_lesson, except: [:index, :new, :create]
   before_action :list_course, only: [:edit, :new]
 

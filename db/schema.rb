@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031100004) do
+ActiveRecord::Schema.define(version: 20161109045159) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "target_id"
@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20161031100004) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.string   "name"
     t.boolean  "is_correct"
     t.integer  "question_id"
+    t.integer  "word_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["word_id"], name: "index_answers_on_word_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -53,8 +54,10 @@ ActiveRecord::Schema.define(version: 20161031100004) do
     t.datetime "spent_time"
     t.integer  "lesson_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "status",        default: 0
+    t.integer  "done_question"
     t.index ["lesson_id"], name: "index_exams_on_lesson_id"
     t.index ["user_id"], name: "index_exams_on_user_id"
   end
@@ -85,10 +88,13 @@ ActiveRecord::Schema.define(version: 20161031100004) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "following_id"
     t.integer  "follower_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -118,6 +124,7 @@ ActiveRecord::Schema.define(version: 20161031100004) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.string   "remember_digest"
   end
 
   create_table "words", force: :cascade do |t|
