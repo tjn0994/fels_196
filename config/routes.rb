@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
-    resources :categories
-    resources :courses
-    resources :lessons
+    resources :categories, except: :show
+    resources :courses, except: :show
+    resources :lessons do
+      resources :words, except: :show
+    end
   end
 
   root "static_pages#home"

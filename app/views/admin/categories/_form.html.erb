@@ -2,5 +2,6 @@
   <%= render "shared/error_messages", object: category.object %>
   <%= category.label :name %>
   <%= category.text_field :name, class: "form-control" %>
-  <%= category.submit yield(:button_text), class: "btn btn-primary form-control" %>
+  <%= category.submit yield(:button_text),
+    class: "btn btn-primary form-control" %>
 <% end %>

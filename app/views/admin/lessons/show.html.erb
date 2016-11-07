@@ -18,7 +18,8 @@
     </table>
     <div class="row">
       <div class="col-md-4">
-        <%= link_to t("create_word"), "#", class: "btn btn-primary btn-lg" %>
+        <%= link_to t("create_word"), admin_lesson_words_path(@lesson),
+          class: "btn btn-primary btn-lg" %>
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-4">
