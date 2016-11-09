@@ -2,7 +2,11 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <%= gravatar_for @user %>
+      <% if @user.avatar? %>
+        <span class="avatar"><%= image_tag @user.avatar, size: Settings.size_user_show %></span>
+      <% else %>
+        <%= gravatar_for @user, size: Settings.size_user_show %>
+      <% end %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "view my profile", @user %></span>
     </section>
@@ -11,7 +15,13 @@
       <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
+            <%= link_to user do %>
+              <% if user.avatar? %>
+                <span class="avatar"><%= image_tag user.avatar, size: 30 %></span>
+              <% else %>
+                <%= gravatar_for @user, size: 30 %>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -21,7 +31,16 @@
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users follow">
-        <%= render @users %>
+        <% @users.each do |user| %>
+        <li>
+          <% if user.avatar? %>
+            <%= image_tag user.avatar, size: Settings.size_user_index %>
+          <% else %>
+            <%= gravatar_for user, size: Settings.size_user_index %>
+          <% end %>
+          <%= link_to user.name, user %>
+        </li>
+        <% end %>
       </ul>
       <%= will_paginate %>
     <% end %>

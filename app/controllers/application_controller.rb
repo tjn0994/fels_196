@@ -37,4 +37,12 @@ class ApplicationController < ActionController::Base
   def get_all_categories
     @categories = Category.includes(:courses).order_date_desc
   end
+
+  def filter_words_by_alphabet alphabet
+     words=Word.where("name like ?","#{alphabet}%")
+  end
+  def filter_words_by_category alphabet
+     category=Category.find_by(name: alphabet)
+     @words=category.courses.lessons.words if category
+  end
 end
