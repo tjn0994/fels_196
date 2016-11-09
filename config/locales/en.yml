@@ -137,3 +137,8 @@ en:
   email: "Email: Elearning@gmail.com"
   course_name: "Course name"
   lesson_name: "Lesson name"
+  learning: "learning"
+  follow: "follow"
+  unfollow: "unfollow"
+  email_user: "Email : "
+  name_user: "Name :"

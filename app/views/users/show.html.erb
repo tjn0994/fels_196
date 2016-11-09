@@ -1,21 +1,40 @@
 <% provide :title, @user.name %>
 <div class="row background_lesson">
   <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <% if @user.avatar? %>
-          <span class="avatar"><%= image_tag @user.avatar, size: Settings.size_user_show %></span>
-        <% else %>
-          <%= gravatar_for @user, size: Settings.size_user_show %>
-        <% end %>
-        <span class="user_show"><%= @user.name %></span>
-      </h1>
-    </section>
-        <section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
+    <div class="user_info">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="row">
+            <% if @user.avatar? %>
+              <span class="avatar"><%= image_tag @user.avatar, size: Settings.size_user_show %>
+              </span>
+            <% else %>
+              <%= gravatar_for @user, size: Settings.size_user_show %>
+            <% end %>
+          </div>
+          <div>
+            <h4> <%= t "name_user"%> <%= @user.name %></h4>
+            <h4> <%= t "email_user"%> <%= @user.email %></h4>
+            <section class="stats">
+              <%= render "shared/stats" %>
+            </section>
+            <br>
+            <div id="follow_form">
+              <% unless current_user? @user %>
+                <% if current_user.following?(@user) %>
+                  <%= render "unfollow" %>
+                <% else %>
+                  <%= render "follow" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
+    <% if current_user.following?(@user) || current_user?(@user) %>
+      <%= render "activities" %>
+    <% end %>
   </div>
 </div>

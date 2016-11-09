@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activities = Activity.includes(:user).filter_user(params[:id])
+      .order_date_desc
   end
 
   def new

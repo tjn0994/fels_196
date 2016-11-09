@@ -6,6 +6,6 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find_by_id params[:id]
+    @lesson = Lesson.includes(:course).find_by_id params[:id]
   end
 end

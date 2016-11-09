@@ -1,5 +1,4 @@
 class ExamsController < ApplicationController
-  $k = 1
   def create_exam
      current_user.exams.create! lesson_id: params[:lesson_id]
      current_user.user_lessons.create! lesson_id: params[:lesson_id]

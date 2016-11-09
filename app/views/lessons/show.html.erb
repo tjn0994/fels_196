@@ -2,6 +2,10 @@
 <div class="row">
   <div class="col-md-4">
     <%= image_tag(@lesson.image ,class: "image-represent img-rounded") %>
+    <div>
+      <%= link_to t("back"), lessons_path(id: @lesson.course),
+        class: "btn btn-primary" %>
+    </div>
   </div>
   <div class="col-md-4">
     <table class="table table-hover">
@@ -18,6 +22,7 @@
 
    <%= link_to "Word List", word_path(@lesson),
       class: "btn btn-primary btn-lg"%>
-    <%= link_to "Start Lesson",{controller: "exams", action: "create_exam",lesson_id: @lesson.id },class: "btn btn-danger btn-lg" %>
+   <%= link_to "Start Lesson",{controller: "exams", action: "create_exam",
+      lesson_id: @lesson.id },class: "btn btn-danger btn-lg" %>
   </div>
 </div>
