@@ -7,17 +7,17 @@ class ExamsController < ApplicationController
   end
 
   def show
-     @exam=Exam.find_by_id params[:id]
+     @exam = Exam.find_by_id params[:id]
 
      if @exam.started?
-       @results=@exam.results
+       @results = @exam.results
      else
-       @questions=@exam.lesson.questions.order("RANDOM()").limit(10)
+       @questions = @exam.lesson.questions.order("RANDOM()").limit(10)
        @exam.build_questions @questions
      end
   end
 
   def index
-     @exams=current_user.exams.order_date_desc
+     @exams = current_user.exams.order_date_desc
   end
 end
