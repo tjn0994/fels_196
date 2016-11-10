@@ -1,7 +1,6 @@
 <h2> Activities </h2>
 <% @activities.each do |activity| %>
-  <div class="row" style="width=80%;height:auto; background:#c299ff;margin-bottom:10px;
-    padding:5px; ">
+  <div class="row activity_user">
     <div class="col-md-2">
       <% if activity.user.avatar? %>
         <%= image_tag activity.user.avatar, size: Settings.size_user_index %>
